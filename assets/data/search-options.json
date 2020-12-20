@@ -1,0 +1,20 @@
+[
+  {
+    "Category": "Actions",
+    "Values": [
+      "Any action", "Add", "Close", "Cut", "Dry", "Move", "Open", "Peel", "Put in", "Take out", "Wash"
+    ]
+  },
+  {
+    "Category": "Objects",
+    "Values": [
+      "Any object", "Bowl", "Carrot", "Cucumber", "Cutting board",  "Frying pan", "Green beans", "Hand", "Knife", "Onion", "Parsley", "Pepper", "Pineapple", "Plate", "Potato", "Stove"
+    ]
+  },
+  {
+    "Category": "Locations",
+    "Values": [
+      "Any location", "Bowl", "Cupboard", "Cutting board", "Drawer", "Fridge", "Frying pan", "Plate", "Pot", "Sink", "Stove"
+    ]
+  }
+]

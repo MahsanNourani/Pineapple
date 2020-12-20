@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACOS Corpus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href='assets/css/media-player.css' rel='stylesheet' />
+</head>
+<body style="height: 100%;">
+<!--<div style="height: 100%;">-->
+
+    <div class="container bg-dark" style="padding-bottom: 15px; ">
+        <div class="row question-post-study" id="short-q-title">
+            <h> Almost Done. Please complete the questionnaire below.</h>
+        </div>
+        <div class="row question-post-study section-header without-exp bg-primary text-white">
+            <h>1. For the following components, please rate your confidence percentage of the system's ability to identify the component within a video. </h>
+        </div>
+        <div id="conf-perc-div">
+        </div>
+
+        <div class="row question-post-study section-header without-exp bg-primary text-white">
+            <h>2. For each query, select if you think the system would match the thumbnail respectively. For each image indicate how confident you feel about your answer.  </h>
+        </div>
+
+        <div id = "mental-model-div"></div>
+
+        <!--<div class="row bg-white p-3 ml-0 mr-0 mb-2">-->
+            <!--<span class="col-md-12 mb-3 question-post-study">Which of the these queries do you believe the system <u>cannot</u> correctly detect? </span>-->
+            <!--<div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4" id="mm-1" data-toggle="buttons" onchange="radioChange();">-->
+                <!--<label class="btn btn-primary">Peel + Any Object +  Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Any action + Onion + Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Any action + Cutting board + Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Any action + Pineapple + Any location<input type="radio" value="1"></label>-->
+                <!--<label class="btn btn-primary">Wash + Any object + Any location<input type="radio" value="0"></label>-->
+            <!--</div>-->
+            <!--<span class="col-md-5 mb-3 question-post-study">How confident are you about your response?</span>-->
+            <!--<input type="range" class="custom-range my-slider col-md-5" id="mm1-conf" name="points1" min="0" max="100" value="0" oninput="d3.select(this.parentNode).select('output').html(this.value + '%');">-->
+            <!--<output name="amount" for="carrot" class="mr-3 col-md-1">0%</output>-->
+        <!--</div>-->
+        <!--<div class="row bg-white p-3 ml-0 mr-0 mb-2">-->
+            <!--<span class="col-md-12 mb-3 question-post-study">Which of the these queries do you believe the system <u>cannot</u> correctly detect? </span>-->
+            <!--<div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4" id="mm-2" data-toggle="buttons" onchange="radioChange();">-->
+                <!--<label class="btn btn-primary">Cut + Carrot + Cutting board<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Cut + Pineapple + Cutting board<input type="radio" value="1"></label>-->
+                <!--<label class="btn btn-primary">Cut + Onion + Cutting board<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Cut + Cucumber + Cutting board<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Cut + Pepper + Cutting board<input type="radio" value="0"></label>-->
+            <!--</div>-->
+            <!--<span class="col-md-5 mb-3 question-post-study">How confident are you about your response?</span>-->
+            <!--<input type="range" class="custom-range my-slider col-md-5" id="mm2-conf" name="points1" min="0" max="100" value="0" oninput="d3.select(this.parentNode).select('output').html(this.value + '%');">-->
+            <!--<output name="amount" for="carrot" class="mr-3 col-md-1">0%</output>-->
+        <!--</div>-->
+        <!--<div class="row bg-white p-3 ml-0 mr-0 mb-2">-->
+            <!--<span class="col-md-12 mb-3 question-post-study">Which of the these queries do you believe the system <u>can</u> correctly detect? </span>-->
+            <!--<div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4" id="mm-3" data-toggle="buttons" onchange="radioChange();">-->
+                <!--<label class="btn btn-primary">Wash + Cucumber + Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Wash + Onion + Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Wash + Carrot + Any location<input type="radio" value="1"></label>-->
+                <!--<label class="btn btn-primary">Wash + Hand + Any location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Wash + Cutting board + Any location<input type="radio" value="0"></label>-->
+            <!--</div>-->
+            <!--<span class="col-md-5 mb-3 question-post-study">How confident are you about your response?</span>-->
+            <!--<input type="range" class="custom-range my-slider col-md-5" id="mm3-conf" name="points1" min="0" max="100" value="0" oninput="d3.select(this.parentNode).select('output').html(this.value + '%');">-->
+            <!--<output name="amount" for="carrot" class="mr-3 col-md-1">0%</output>-->
+        <!--</div>-->
+        <!--<div class="row bg-white p-3 ml-0 mr-0 mb-2">-->
+            <!--<span class="col-md-12 mb-3 question-post-study">Which of the these queries do you believe the system <u>can</u> correctly detect? </span>-->
+            <!--<div class="col-md-12 btn-group btn-group-toggle float btn-group-padding mb-4" id="mm-4" data-toggle="buttons" onchange="radioChange();">-->
+                <!--<label class="btn btn-primary">Move + Cucumber + Any Location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Any action + Cucumber + Bowl<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Wash + Cucumber + Any Location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Take out + Cucumber + Any Location<input type="radio" value="0"></label>-->
+                <!--<label class="btn btn-primary">Any action + Cucumber + Cutting board<input type="radio" value="1"></label>-->
+            <!--</div>-->
+            <!--<span class="col-md-5 mb-3 question-post-study">How confident are you about your response?</span>-->
+            <!--<input type="range" class="custom-range my-slider col-md-5" id="mm4-conf" name="points1" min="0" max="100" value="0" oninput="d3.select(this.parentNode).select('output').html(this.value + '%');">-->
+            <!--<output name="amount" for="carrot" class="mr-3 col-md-1">0%</output>-->
+        <!--</div>-->
+
+        <!--<div class="row without-exp" style="margin-bottom: 10px;">-->
+            <!--<div class="col-md-8 shortq-questions vertical-align-center">-->
+                <!--<h class="component-question"> On a scale of 0 to 100 percent, what do you think the system’s accuracy is?  </h>-->
+            <!--</div>-->
+
+            <!--<div class="btn-group col-md-4 btn-group-modified-questionnaire" data-toggle="buttons" style="padding-right: 47px;">-->
+                <!--<input type="number" class="form-control" id="pred" onchange="radioChange();">-->
+            <!--</div>-->
+            <!--<div class="col-md-7 shortq-questions vertical-align-center">-->
+                <!--<h class="component-question"> Please briefly explain your reason for guessing this number.  </h>-->
+            <!--</div>-->
+            <!--<div class="btn-group col-md-5 btn-group-modified-questionnaire" data-toggle="buttons" style="padding-right: 47px;">-->
+                <!--<textarea class="form-control" id="pred-exp"></textarea>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="row question-post-study section-header bg-primary text-white">
+            <h>3. For the following questions, indicate how much you agree with the given statement. </h>
+        </div>
+
+        <div class="row without-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <h class="question-post-study">The system was easy to use and understand.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q1" data-toggle="buttons" onchange="radioChange();">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+        <div class="row without-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <h class="question-post-study">The task was easy to understand.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q2" data-toggle="buttons" onchange="radioChange();">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+        <div class="row with-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <h class="question-post-study">The explanations of how the system works seem complete.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q3" data-toggle="buttons" onchange="radioChange();">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+        <div class="row with-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <h class="question-post-study">The explanations of how the system works are satisfying.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q4" data-toggle="buttons" onchange="radioChange();">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+        <div class="row with-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <h class="question-post-study">The explanations of how the system works have sufficient details.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q5" data-toggle="buttons" onchange="radioChange();">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+        <div class="row with-exp bg-white mb-2 p-3 mr-0 ml-0 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-12 shortq-questions mb-3">
+                <!-- The explanations helped in building a proper understanding of how the Artificial Intelligence model and system works.-->
+                <h class="question-post-study">The explanations of how the system works are useful to my goals.</h>
+            </div>
+            <div class="col-md-12 btn-group btn-group-toggle float btn-group-padding" id="q6" data-toggle="buttons" onchange="radioChange()">
+                <label class="btn btn-warning">Strongly disagree<input type="radio" value="-2"></label>
+                <label class="btn btn-warning">Disagree<input type="radio" value="-1"></label>
+                <label class="btn btn-warning">Neutral<input type="radio" value="0"></label>
+                <label class="btn btn-warning">Agree<input type="radio" value="1"></label>
+                <label class="btn btn-warning">Strongly agree<input type="radio" value="2"></label>
+            </div>
+        </div>
+
+
+        <div class="row question-post-study section-header bg-primary text-white">
+            <h>4. Based on your experience with the system, please answer the following questions. </h>
+        </div>
+
+        <div class="row bg-white mr-0 ml-0 p-3 border rounded" style="margin-bottom: 10px;">
+            <div class="col-md-7 shortq-questions">
+                <h class="question-post-study"> What factors most affected your decisions or your ability to answer each question?  </h>
+            </div>
+            <div class="btn-group col-md-5 btn-group-modified-questionnaire" data-toggle="buttons" style="padding-right: 47px;">
+                <textarea class="form-control" id="affect" oninput="radioChange();"></textarea>
+            </div>
+            <div class="col-md-7 shortq-questions">
+                <h class="question-post-study"> Do you have any other thoughts or feedback about this experience? </h>
+            </div>
+            <div class="btn-group col-md-5 btn-group-modified-questionnaire" data-toggle="buttons" style="padding-right: 47px;">
+                <textarea class="form-control" id="cmnt"></textarea>
+            </div>
+<!--        </div>-->
+        
+<!--
+        <div class="row question-post-study section-header bg-warning">
+            <h>5. , please describe why: </h>
+        </div>
+-->
+
+<!--        <div class="row bg-white mr-0 ml-0 p-3" style="margin-bottom: 10px;">-->
+            <!--<div class="col-md-7 shortq-questions">-->
+                <!--<h class="question-post-study">Which policy was most challenging to find the correct answer to?</h>-->
+            <!--</div>-->
+            <!--<div class="btn-group  row col-md-12 " data-toggle="buttons">-->
+                <!--<div class="col-md-12 btn-group btn-group-vertical btn-group-toggle float btn-group-padding" id="policyEval" data-toggle="buttons" onchange="radioChange();">-->
+                <!--<label class="btn btn-primary"  style="text-align: left">1. Because of restocking, employees should not use parsley, peppers, or pineapples on Wednesday.<input type="radio" value="1"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">2. Employees must not use pineapples more than 3 days a week.<input type="radio" value="2"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">3. Employees must wash cucumbers before cutting or using them.<input type="radio" value="3"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">4. Before putting cutting boards away, employees wash and dry them.<input type="radio" value="4"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">5. Employees always move onions to a plate after being peeled, chopped or cooked.<input type="radio" value="5"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">6. When taking out carrots, employees always wash them regardless of how they are used.<input type="radio" value="6"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">7. When cooking carrots in a frying pan, employees do not need to peel them.<input type="radio" value="7"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">8. Employees must wash their hands before preparing food.<input type="radio" value="8"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">9. Employees can NOT use carrots on Thursday.<input type="radio" value="9"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">10. Employees should NOT cook red peppers in a frying pan.<input type="radio" value="10"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">11. Employees must dry their hands if they washed their hands.<input type="radio" value="11"></label>-->
+                <!--<label class="btn btn-primary"  style="text-align: left">12. I can not remember<input type="radio" value="12"></label>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-7 shortq-questions">-->
+                <!--<h class="question-post-study"> Please describe why you found this policy difficult to answer: </h>-->
+            <!--</div>-->
+            <!--<div class="btn-group col-md-5 btn-group-modified-questionnaire" data-toggle="buttons" style="padding-right: 47px;">-->
+                <!--<textarea class="form-control" id="policy-exp"></textarea>-->
+            <!--</div>-->
+        </div>
+
+        <div class="col-md-12" style="padding:  0px;border-bottom-right-radius:  3px; border-bottom-left-radius: 3px;">
+            <button class="btn btn-success btn-large col-md-12" id="next" onclick="continueToLastPage()" style="font-size:15px;border-radius:0px;border-bottom-right-radius: 3px;" disabled>Continue
+                <span><i class="fas fa-arrow-circle-right"></i></span>
+            </button>
+        </div>
+    </div>
+    <!-- end page-wrapper -->
+
+<!--</div>-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="assets/plugins/d3.js"></script>
+<script src="assets/scripts/post_study.js"></script>
+
+</body>
+
+</html>

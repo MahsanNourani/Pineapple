@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query Builder</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href='assets/css/query-builder.css' rel='stylesheet'/>
+    <link href='assets/css/media-player.css' rel='stylesheet' />
+</head>
+<body>
+    <!--<div id="wrapper" class="row">-->
+    <div class="container-fluid">
+        <!--<ul class="nav nav-tabs nav-justified">-->
+            <!--<li class="active" id="home-tab"><a data-toggle="tab" href="#home">Home</a></li>-->
+            <!--<li id="results-tab"><a data-toggle="tab" href="#results">Query Results</a></li>-->
+        <!--</ul>-->
+        <!--<div class="tab-content">-->
+            <!--<div id="home" class="col-md-12">-->
+                <!--policies-->
+        <div class="row">
+            <div class="col-md-6" id="policy-panel">
+                    <div class="panel panel-primary">
+                        <!--<div class="panel-heading">-->
+                            <!--<h class="header"><b>Rules and Policies</b></h>-->
+                        <!--</div>-->
+                        <div class="panel-body">
+                            <div class="policy-radio" id="general-rules"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--query-builder-->
+            <div class="col-md-6" id="query-panel">
+                    <div class="jumbotron h-50 w-100">
+                        <div class="container">
+                            <h1 class="font-weight-bold" >Task</h1>
+                            <p>Use the system to determine whether each of the policies are pursued or not.</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <!--<div class="panel-heading">-->
+                            <!--<h class="header"><b>Build Your Question Here</b></h>-->
+                        <!--</div>-->
+                        <div class="panel-body">
+                            <div class="col-md-12 task-description vertical-align-center justify-content-center">
+                                Use this tool to ask the system a question and search the answer.
+                            </div>
+                            <div id="dropdown-div" class="row"></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1 d-none" id="search-results-div">
+                <div class="panel panel-primary">
+                    <div class="panel-body" id="search-results">
+                        <div class="col-md-12 task-description vertical-align-center justify-content-center">
+                            Here are the results of your search. You can choose days to see the results of your query in that day.
+                        </div>
+                        <!--<div class="row" id="search-results"></div>-->
+                        <!-- Nav tabs -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--</div>-->
+            <!--<div id="results" class="tab-pane col-md-12">-->
+                <!--&lt;!&ndash;query-and-answer&ndash;&gt;-->
+                <!--<div class="col-md-5 ">-->
+                    <!--<div class="panel panel-primary">-->
+                        <!--<div class="panel-heading col-md-8">-->
+                            <!--<h class="header"><b>Your Query</b></h>-->
+                        <!--</div>-->
+                        <!--<div class="panel-heading col-md-4">-->
+                            <!--<h class="header"><b>System Answer</b></h>-->
+                        <!--</div>-->
+                        <!--<div class="panel-body">-->
+                            <!--<div id="query-and-answer"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;video-thumbnails&ndash;&gt;-->
+                <!--<div class="col-md-7 ">-->
+                    <!--<div class="panel panel-primary">-->
+                        <!--<div class="panel-heading">-->
+                            <!--<h class="header"><b>Videos Used By System for This Answer</b></h>-->
+                        <!--</div>-->
+                        <!--<div class="panel-body">-->
+                            <!--<div id="video-thumbnails"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;explanation&ndash;&gt;-->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h class="header"><b>Detailed Video Explanation</b></h>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" id="video-explanation">
+                                <div id="media-player" class="col-md-5">
+                                    <video id="media-video" class="col-md-12 img-responsive" onloadeddata="onVideoLoaded()"></video>
+                                    <div id='media-controls'>
+                                        <table class="col-md-12">
+                                            <tr>
+                                                <td style="width: 20%;">
+                                                    <div id="allButton">
+                                                        <button id='play-pause-button' class='play media-player-btn' title='play' onclick='togglePlayPause();'><i class="fa fa-play" id="transportIcon"></i></button>
+                                                        <button id='stop-button' class='stop media-player-btn' title='stop' onclick='stopPlayer();'><i class="fa fa-stop"></i></button>
+                                                        <button id='replay-button' class='replay media-player-btn' title='replay' onclick='replayMedia();'><i class="fa fa-repeat"></i></button>
+                                                    </div>
+                                                    <div id="position"></div>
+                                                </td>
+
+                                                <td id="segments-control"style="width: 67%;">
+                                                    <!-- for progress bar -->
+                                                    <div class="progress" id="progress-bar" onclick='changePos(event);'>
+                                                        <div class="progress-bar progress-bar-success" id='dynamic' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                                            <span id="current-progress"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- for buttons -->
+                                                    <div id="segment" style="width:100%"></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="explanation-div" class="col-md-7">
+                                    <!-- Explanation Panel-->
+                                    <div class="panel panel-primary" id="explanation-box">
+                                        <div class="panel-heading">
+                                            <h class="header"><b>Detected Combinations of Components</b></h>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <table class="col-md-12">
+                                                <td class="table-col" id = "rank">
+                                                    <div class="list-group list3" id="list3" >
+
+                                                    </div>
+                                                </td>
+                                                <td class="table-col">
+                                                    <div class="list-group list" id="list">
+                                                    </div>
+                                                </td>
+                                                <td class="table-col">
+                                                    <div class="list-group list" id="list1">
+                                                    </div>
+                                                </td>
+
+                                                <td class="table-col">
+                                                    <div class="list-group list" id="list2">
+                                                    </div>
+                                                </td>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <!--End Explanation Panel-->
+                                    <div class="panel panel-primary" id="component-score-div">
+                                        <div class="panel-heading">
+                                            <h class="header"><b>Component Score</b></h>
+                                        </div>
+
+                                        <div class="panel-body">
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="assets/plugins/d3.min.js"></script>
+<script src="assets/scripts/query-builder.js"></script>
+<script src="assets/scripts/policies.js"></script>
+<script src="assets/scripts/Explanation.js"></script>
+<script src="assets/scripts/newCharts.js"></script>
+<script src='assets/scripts/media-player.js'></script>
+<script src="assets/scripts/searchResults.js"></script>
+</body>
+</html>

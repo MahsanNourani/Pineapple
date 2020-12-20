@@ -1,0 +1,27 @@
+[
+  {
+    "Object": "",
+    "Action": "Cut",
+    "Location": "Cutting board",
+    "videos": [
+      {
+        "videoName": "vid1.mp4",
+        "systemAnswer": "Yes",
+        "correctAnswer": "No",
+        "Explanations": []
+      },
+      {
+        "videoName": "vid2.mp4",
+        "systemAnswer": "Yes",
+        "correctAnswer": "No",
+        "Explanations": []
+      },
+      {
+        "videoName": "vid3.mp4",
+        "systemAnswer": "No",
+        "correctAnswer": "No",
+        "Explanations": []
+      }
+    ]
+  }
+]

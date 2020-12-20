@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACOS Corpus</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <script src="assets/plugins/d3.js"></script>
+</head>
+<body class="vertical-align-center" style="background: #d2d4d9;">
+    <div class="container" style="background-color: #20a6682e;  height: 500px;border-radius: 10px; text-align: center; color: #323730;">
+        <h1> Are you ready to start? You can go back to review the instructions again.
+            Once you continue, you won't have access to the tutorials.</h1>
+
+        <button class="btn btn-danger" onclick="backToTutorial();" style="border-radius: 50%; height: 300px; width: 300px; margin-right: 60px; margin-top: 40px; border: solid 1px black; color: black; font-size: 25px; font-weight: bold"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span> Go Back To Tutorials </button>
+        <button class="btn btn-info" data-toggle="modal" data-target="#myModal" id="modal-btn" style="border-radius: 50%; height: 300px; width: 300px; margin-top: 40px; border: solid 1px black;color: black; font-size: 25px; font-weight: bold"> Continue To Task <span><i class="fa fa-arrow-right" aria-hidden="true"></i></span></button>
+    </div>
+    <!--modal-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    <h4 class="modal-title">Warning!</h4>
+                </div>
+                <div class="modal-body" style="font-size: 19px;">
+                    <p style="text-align: center;">You are about to start the task. Please do not press your browser's back button in order to preserve your progress.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"> Cancel </button>
+                    <button type="button" class="btn btn-success" onclick="continueToNextTask();"> Continue </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of modal-->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/d3.min.js"></script>
+    <script src="assets/scripts/userStudy.js"></script>
+</body>
+</html>

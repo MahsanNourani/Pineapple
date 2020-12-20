@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACOS Corpus</title>
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link href='assets/css/media-player.css' rel='stylesheet' />
+</head>
+<body style="height: 100%;">
+<!--<div style="height: 100%;">-->
+
+    <div class="container" style="padding-bottom: 15px;  background-color: #2b2d39;"> //#eef488
+        <div class="row component" id="short-q-title">
+            <h> Please answer the following regarding to how you answered the video questions.</h>
+        </div>
+        <div class="row" style="margin-bottom: 10px;" id="video-segment">
+            <image src="assets/images/segments.png" class="col-md-6"></image>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How much did you use the video segments? </h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="video-segment-use">
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()"> Never
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()"> Rarely
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()"> Sometimes
+                </label>
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()"> Most of the time
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()"> Every time
+                </label>
+            </div>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How helpful did you find these video segments?</h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="video-segment-help">
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()">Very Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()">Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()">Neutral
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()">Helpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()">Very Helpful
+                </label>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;" id="detected-combinations">
+            <image src="assets/images/Detected-combinations.png" class="col-md-6"></image>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How much did you use the detected combination of components? </h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="detected-combinations-use">
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()"> Never
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()"> Rarely
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()"> Sometimes
+                </label>
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()"> Most of the time
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()"> Every time
+                </label>
+            </div>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How helpful did you find these detected combination of components?</h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="detected-combinations-help">
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()">Very Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()">Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()">Neutral
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()">Helpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()">Very Helpful
+                </label>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;" id="component-scores">
+            <image src="assets/images/Component-scores.png" class="col-md-6"></image>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How much did you use the component-scores? </h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="component-scores-use">
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()"> Never
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()"> Rarely
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()"> Sometimes
+                </label>
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()"> Most of the time
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()"> Every time
+                </label>
+            </div>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How helpful did you find these component-scores?</h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="component-scores-help">
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()">Very Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()">Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()">Neutral
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()">Helpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()">Very Helpful
+                </label>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;" id="computer-answer">
+            <image src="assets/images/computer-answer.png" class="col-md-6"></image>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How much did you use the computer's answer? </h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="computer-answer-use">
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()"> Never
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()"> Rarely
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()"> Sometimes
+                </label>
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()"> Most of the time
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()"> Every time
+                </label>
+            </div>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How helpful did you find these answers? </h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="computer-answer-help">
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()">Very Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()">Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()">Neutral
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()">Helpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()">Very Helpful
+                </label>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;" id="video-player">
+            <image src="assets/images/video-player.png" class="col-md-6"></image>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How much did you use the video player?</h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="video-player-use">
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()"> Never
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()"> Rarely
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()"> Sometimes
+                </label>
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()"> Most of the time
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()"> Every time
+                </label>
+            </div>
+            <div class="col-md-6 shortq-questions vertical-align-center">
+                <h class="component"> How helpful did you find the video player?</h>
+            </div>
+            <div class="btn-group col-md-6 btn-group-modified-questionnaire" data-toggle="buttons" id="video-player-help">
+                <label for="" class="btn btn-primary col-md-3 radio-btn-group">
+                    <input type="radio" value="-2" onchange="radioChange()">Very Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="-1" onchange="radioChange()">Unhelpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="0" onchange="radioChange()">Neutral
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="1" onchange="radioChange()">Helpful
+                </label>
+                <label for="" class="btn btn-primary col-md-2 radio-btn-group">
+                    <input type="radio" value="2" onchange="radioChange()">Very Helpful
+                </label>
+            </div>
+        </div>
+        <!--<div class="col-md-12 component-header vertical-align-center component" style="background-color: transparent;" id="video-segment-eval-header">-->
+            <!--<h class="component"> How do you evaluate the usability of the video segments explanations? </h>-->
+        <!--</div>-->
+        <!--<div class="btn-group col-md-12 btn-group-modified-questionnaire" data-toggle="buttons" id="video-segment-eval">-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="-1" onchange="radioChange()">Not useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="0" onchange="radioChange()">Somewhat useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="1" onchange="radioChange()">Useful-->
+            <!--</label>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-12 component-header vertical-align-center component" style="background-color: transparent;" id="combination-eval-header">-->
+            <!--<h class="component"> How do you evaluate the usability of the detected combination of components? </h>-->
+        <!--</div>-->
+        <!--<div class="btn-group col-md-12 btn-group-modified-questionnaire" data-toggle="buttons" id="combination-eval">-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="-1" onchange="radioChange()">Not useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="0" onchange="radioChange()">Somewhat useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="1" onchange="radioChange()">Useful-->
+            <!--</label>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-12 component-header vertical-align-center component" style="background-color: transparent;" id="component-score-eval-header">-->
+            <!--<h class="component"> How do you evaluate the usability of the component scores? </h>-->
+        <!--</div>-->
+        <!--<div class="btn-group col-md-12 btn-group-modified-questionnaire" data-toggle="buttons" id="component-score-eval">-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="-1" onchange="radioChange()">Not useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="0" onchange="radioChange()">Somewhat useful-->
+            <!--</label>-->
+            <!--<label for="" class="btn btn-primary col-md-4">-->
+                <!--<input type="radio" value="1" onchange="radioChange()">Useful-->
+            <!--</label>-->
+        <!--</div>-->
+
+        <div class="col-md-12" style="padding:  0px;border-bottom-right-radius:  3px; border-bottom-left-radius: 3px;">
+            <button class="btn btn-default btn-large col-md-12 disabled" id="next" onclick="continueToPredictionTask()" style="font-size:15px;border-radius:0px;border-bottom-right-radius: 3px;">Continue
+                <span><i class="fas fa-arrow-circle-right"></i></span>
+            </button>
+        </div>
+    </div>
+    <!-- end page-wrapper -->
+
+<!--</div>-->
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="assets/plugins/d3.js"></script>
+<script src="assets/scripts/shortQ.js"></script>
+
+</body>
+
+</html>
