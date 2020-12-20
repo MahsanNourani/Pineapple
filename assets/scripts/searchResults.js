@@ -1,5 +1,6 @@
 DATA = {};
-CONDITION = localStorage.getItem("condition");
+// CONDITION = localStorage.getItem("condition");
+CONDITION = "2";
 d3.queue()
     .defer(d3.json, "assets/data/complex_dataset.json")
     .defer(d3.json, "assets/data/days.json")
@@ -24,9 +25,8 @@ d3.queue()
         console.log("Video is loaded");
     };
 
-    this.searchForQuery = function (object, action, location) {
+    this.searchForQuery = function (object, action) {
 
-        // console.log(action + " " + object + " " + location);
 
         d3.select("#search-results-div")
             .classed("d-none", false);
@@ -35,7 +35,7 @@ d3.queue()
         if (!el.empty()) {
             el.remove();
         }
-        var newObj = object, newAct = action, newLoc = location;
+        var newObj = object, newAct = action;
         if (object == "any object" || object == "objects") {
             d3.select("#Objects-dropdown").html("Any object");
             newObj = "n/a";
@@ -44,27 +44,22 @@ d3.queue()
             d3.select("#Actions-dropdown").html("Any action");
             newAct = "n/a";
         }
-        if (location == "any location" || location == "locations") {
-            d3.select("#Locations-dropdown").html("Any location");
-            newLoc = "n/a";
-        }
 
         var queryObject = {};
             queryObject.obj = object;
             queryObject.act = action;
-            queryObject.loc = location;
         createQueryLog(queryObject);
 
         var listOfResults = [];
         var daysColorBadge =
-            {"Monday":"#f2ff33", "Tuesday":"#b9f657", "Wednesday":"#96fd87", "Thursday":"#31f6ff", "Friday":"#04ffc5"};
+            {"Monday":"#f2ff33", "Tuesday":"#b9f657", "Wednesday":"#96fd87", "Thursday":"#31f6ff", "Friday":"#04ffc5", "Saturday":"#808ff3"};
 
 
         for (var vidIndex = 0; vidIndex < DATA.complex.length; vidIndex++) {
             console.log(DATA.complex[vidIndex]);
             for (var i = 0; i < DATA.complex[vidIndex].listOfQuestions.length; i++) {
                 var query = DATA.complex[vidIndex].listOfQuestions[i].questionText;
-                if(query.object.toLowerCase() ==  newObj && query.action.toLowerCase() == newAct && query.location.toLowerCase() == newLoc) {
+                if(query.object.toLowerCase() ==  newObj && query.action.toLowerCase() == newAct) {
                     // console.log("found a match!");
                     var resultObject = {};
                     resultObject["video"] = DATA.complex[vidIndex].videoName;
@@ -163,11 +158,7 @@ d3.queue()
         thumbnail.append("img")
             .classed("img-responsive col-md-12 p-0 bg-white", true)
             .attr("src", function (d) {
-                var imageSource = "assets/thumbnails/frame_";
-                if (CONDITION == "0" || CONDITION == "1")
-                    imageSource += d.video + "_mid.jpg";
-                else //This is changed to the URL to make the local storage free of 50000 thumbnails!
-                    imageSource = "https://indie.cise.ufl.edu/Pineapple/assets/thumbnails/frame_" + d.expId + ".jpg";
+                var imageSource = "assets/thumbnails/frame_" + d.video + "_mid.jpg";
                 return imageSource;
             })
             .attr("id", function (d) {
@@ -201,7 +192,7 @@ d3.queue()
                 createVideoLog("thumbnailBtn", d.expId, "");
                 var title = "";
                 title += ((d.computerAnswer.toLowerCase() == "yes")?"Found [": "Not found [");
-                title += ((newAct=="n/a")?"Any action":newAct) + " + " + ((newObj=="n/a")?"Any object":newObj) + " + " + ((newLoc=="n/a")?"Any location":newLoc) + "]";
+                title += ((newAct=="n/a")?"Any action":newAct) + " + " + ((newObj=="n/a")?"Any object":newObj) + "]";
                 d3.select("#myModal").select(".modal-title").html(title);
                 d3.select("#myModal").select(".modal-title").attr("id", d.expId);
                 loadVideo(d.video);
@@ -293,7 +284,7 @@ function startTask() {
     d3.select("#loading-button").classed("d-none", false);
     var modalContent = d3.select("#load-data-modal");
     modalContent.select("h4").html("Success!");
-    modalContent.select(".modal-body").html("Thank you for your patience. Please click the button bellow to start the task.")
+    modalContent.select(".modal-body").html("Data successfully loaded. Please press Continue to use the system.")
     modalContent.select(".modal-header").classed("bg-warning", false).classed("bg-success", true);
     localStorage.setItem("mainStart", getDateTime());
 }
@@ -375,7 +366,7 @@ function loadVideo(videoName) {
     clear_segment();
     toggleExplanationBasedOnCondition();
     var vid = document.getElementById("media-video");
-    var sourceVideo = 'https://indie.cise.ufl.edu/Pineapple/assets/videos/' + videoName;
+    var sourceVideo = 'assets/videos/' + videoName; //https://indie.cise.ufl.edu/Pineapple/
     vid.src = sourceVideo;
     vid.load();
 }

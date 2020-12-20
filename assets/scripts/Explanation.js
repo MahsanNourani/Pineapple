@@ -34,7 +34,7 @@ function loadExplanation (data) {
         .html(function(d) {
             var rank = "<b class='p-1 m-2'>" + d.approximation + ". </b>";
             var explanation = "<p class='p-1 m-2 border rounded detected-comb-item'>" + changeIfNA(d.action, "action") 
-                            + " + " + changeIfNA(d.object, "object") + " + " + changeIfNA(d.location, "location") + ". </p>";
+                            + " + " + changeIfNA(d.object, "object") + ". </p>";
             return rank  + explanation;
 
         })

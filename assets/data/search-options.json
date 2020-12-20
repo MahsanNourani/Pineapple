@@ -2,19 +2,14 @@
   {
     "Category": "Actions",
     "Values": [
-      "Any action", "Add", "Close", "Cut", "Dry", "Move", "Open", "Peel", "Put in", "Take out", "Wash"
+      "Any action", "Clean", "Close", "Fill", "Get", "Open", "Pick up", "Put", "Put back", "Set Weight", "Tag", "Take"
     ]
   },
   {
     "Category": "Objects",
     "Values": [
-      "Any object", "Bowl", "Carrot", "Cucumber", "Cutting board",  "Frying pan", "Green beans", "Hand", "Knife", "Onion", "Parsley", "Pepper", "Pineapple", "Plate", "Potato", "Stove"
-    ]
-  },
-  {
-    "Category": "Locations",
-    "Values": [
-      "Any location", "Bowl", "Cupboard", "Cutting board", "Drawer", "Fridge", "Frying pan", "Plate", "Pot", "Sink", "Stove"
+      "Any object", "Biotin bottle", "Bottle", "Cellobiose bottle", "Dextrose bottle", "Dish", "Hemisulfate bottle", "Label", "Mgso4 bottle", "Pen", "Peptone bottle", "Pipette", "Salt bottle", "Scale", "Spatula", "Syringe", "Test tube 1", "Test tube 2", "Towel", "Weight on scale"
     ]
   }
 ]
+

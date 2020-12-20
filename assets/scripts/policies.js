@@ -23,12 +23,8 @@
         // show modal to confirm they are finished!
         location.href = './com_acc.html';
     };
-
-    var condition = localStorage.getItem("condition"), file = '';
-    if (condition == '0' || condition == '2')
-        file = 'assets/data/rules-weak-first.json';
-    else
-        file = 'assets/data/rules-strong-first.json';
+    
+    file = 'assets/data/wetlab-policies.json';
 
     d3.json(file,  function (error, data) {
         if (error)

@@ -2,56 +2,37 @@
   {
     "Day":"Monday",
     "Videos":[
-      {"name":"s13-d21.mp4", "id": 1},
-      {"name":"s13-d23.mp4", "id": 2},
-      {"name":"s14-d27.mp4", "id": 3},
-      {"name":"s22-d29.mp4", "id": 4},
-      {"name":"s37-d46.mp4", "id": 5},
-      {"name":"s27-d45.mp4", "id": 6}
+      {"name":"YPAD14.mp4", "id": 1}
     ]
   },
   {
     "Day":"Tuesday",
     "Videos": [
-      {"name":"s13-d27.mp4", "id": 7},
-      {"name":"s14-d29.mp4", "id": 8},
-      {"name":"s21-d23.mp4", "id": 9},
-      {"name":"s28-d46.mp4", "id": 10},
-      {"name":"s36-d43.mp4", "id": 11},
-      {"name":"s34-d21.mp4", "id": 12}
+      {"name":"CELL23.mp4", "id": 2}
     ]
   },
   {
     "Day":"Wednesday",
     "Videos": [
-      {"name":"s13-d45.mp4", "id": 13},
-      {"name":"s14-d43.mp4", "id": 14},
-      {"name":"s28-d51.mp4", "id": 15},
-      {"name":"s24-d21.mp4", "id": 16},
-      {"name":"s32-d27.mp4", "id": 17},
-      {"name":"s36-d23.mp4", "id": 18}
+      {"name":"CELL24.mp4", "id": 3}
     ]
   },
   {
     "Day":"Thursday",
     "Videos": [
-      {"name":"s14-d51.mp4", "id": 19},
-      {"name":"s23-d43.mp4", "id": 20},
-      {"name":"s23-d45.mp4", "id": 21},
-      {"name":"s21-d43.mp4", "id": 22},
-      {"name":"s29-d29.mp4", "id": 23},
-      {"name":"s28-d27.mp4", "id": 24}
+      {"name":"LLGM12.mp4", "id": 4}
     ]
   },
   {
     "Day":"Friday",
     "Videos": [
-      {"name":"s15-d23.mp4", "id": 25},
-      {"name":"s15-d46.mp4", "id": 26},
-      {"name":"s25-d51.mp4", "id": 27},
-      {"name":"s27-d21.mp4", "id": 28},
-      {"name":"s33-d45.mp4", "id": 29},
-      {"name":"s27-d29.mp4", "id": 30}
+      {"name":"LLGM13.mp4", "id": 5}
+    ]
+  },
+  {
+    "Day":"Saturday",
+    "Videos": [
+      {"name":"YPAD13.mp4", "id": 6}
     ]
   }
 ]

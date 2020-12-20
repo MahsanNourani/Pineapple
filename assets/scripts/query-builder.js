@@ -5,15 +5,13 @@
     function getComponents() {
         var object = d3.select("#Objects-dropdown").html().toLowerCase();
         var action = d3.select("#Actions-dropdown").html().toLowerCase();
-        var location = d3.select("#Locations-dropdown").html().toLowerCase();
-        return {object: object, action: action, location: location};
+        return {object: object, action: action};
     }
 
     function toggleSubmitSearchButton() {
         var __ret = getComponents();
         if ((__ret.object == "any object" || __ret.object == "objects") &&
-            (__ret.action == "any action" || __ret.action == "actions") &&
-            (__ret.location == "any location" || __ret.location == "locations")) {
+            (__ret.action == "any action" || __ret.action == "actions")) {
             d3.select("#submit-search").attr("disabled", true);
         }
         else
@@ -106,9 +104,8 @@
                 var __ret = getComponents();
                 var object = __ret.object;
                 var action = __ret.action;
-                var location = __ret.location;
 
-                searchForQuery(object, action, location);
+                searchForQuery(object, action);
 
             });
 
@@ -123,25 +120,6 @@
             .append("i")
             .classed("fas fa-plus text-white", true);
 
-        d3.select("#dropdown-div")
-            .insert("div", "#Locations-dropdown-div + *")
-            .append("i")
-            .classed("fas fa-arrow-right text-white", true);
-        // var objects = d3.select("#Objects-dropdown-div").selectAll("a");
-        //     objects.append("img")
-        //     .classed("img-fluid dropdown-img", true)
-        //     .attr("src", function (d) {
-        //         return "assets/images/Objects/" + d.toLowerCase() + ".png";
-        //     });
-        // objects.insert("div", "a")
-        //     .classed("dropdown-divider", true);
-
     });
-
-    var condition = localStorage.getItem("condition");
-    if (condition == "0" || condition == "1")
-        d3.select("#tutorial-nX").classed("d-none", false);
-    else
-        d3.select("#tutorial-X").classed("d-none", false);
 
 })();
