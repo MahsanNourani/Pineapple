@@ -1,0 +1,5 @@
+.DS_Store
+.vscode/
+access.sh
+assets/.DS_Store
+assets/data/.DS_Store
